@@ -17,6 +17,11 @@
                         <input matInput type="password" placeholder="Enter your password" formControlName="password" required class="form-field">
                         <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password is required</mat-error>
                     </mat-form-field>
+
+                    <!-- เพิ่มส่วนนี้เพื่อแสดงข้อความผิดพลาด -->
+                    <div *ngIf="loginFailed" class="error-message">
+                        Username or password is incorrect. Please try again.
+                    </div>
                 </mat-card-content>
                 <mat-card-actions>
                     <button mat-raised-button color="primary">Login</button>
